@@ -13,9 +13,12 @@
 const Dashboard = async () => {
   const getReviews = async () => {
     try {
-      const res = await fetch("http://localhost:3000/api/Anime", {
+      const res = await fetch("/api/Anime", {
         cache: "no-store",
       });
+      // const res = await fetch("http://localhost:3000/api/Anime", {
+      //   cache: "no-store",
+      // });
   
       return res.json();
     } catch (error) {
