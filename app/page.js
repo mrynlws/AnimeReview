@@ -1,16 +1,28 @@
-const getReviews = async () => {
-  try {
-    const res = await fetch("http://localhost:3000/api/Anime", {
-      cache: "no-store",
-    });
+// const getReviews = async () => {
+//   try {
+//     const res = await fetch("http://localhost:3000/api/Anime", {
+//       cache: "no-store",
+//     });
 
-    return res.json();
-  } catch (error) {
-    console.log("Failed to get reviews", error);
-  }
-};
+//     return res.json();
+//   } catch (error) {
+//     console.log("Failed to get reviews", error);
+//   }
+// };
 
 const Dashboard = async () => {
+  const getReviews = async () => {
+    try {
+      const res = await fetch("http://localhost:3000/api/Anime", {
+        cache: "no-store",
+      });
+  
+      return res.json();
+    } catch (error) {
+      console.log("Failed to get reviews", error);
+    }
+  };
+
   const { animes } = await getReviews();
 
   return (
